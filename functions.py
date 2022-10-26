@@ -22,6 +22,7 @@ def search_by_query(query) -> list[dict]:
     """
     posts = get_data_from_json()
     search_posts = []
+    print ('f-gq')
     for post in posts:
         if query in post['content']:
             search_posts.append(post)
@@ -33,4 +34,4 @@ def add_post(post, path_data_json='posts.json'):
     posts = get_data_from_json()
     posts.append(post)
     with open(path_data_json, 'w', encoding='utf-8') as file:
-        json.dump(posts, file)
+        json.dump(posts, file, ensure_ascii=False)
