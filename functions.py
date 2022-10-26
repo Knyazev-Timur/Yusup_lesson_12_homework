@@ -22,7 +22,7 @@ def search_by_query(query) -> list[dict]:
     """
     posts = get_data_from_json()
     search_posts = []
-    print ('f-gq')
+    
     for post in posts:
         if query in post['content']:
             search_posts.append(post)
